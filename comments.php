@@ -5,7 +5,7 @@
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @package spt_Theme
+ * @package SPR_Theme
  */
 
 /*
@@ -22,16 +22,16 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-			$spt_theme_comment_count = get_comments_number();
-			if ( '1' === $spt_theme_comment_count ) {
+			$spr_theme_comment_count = get_comments_number();
+			if ( '1' === $spr_theme_comment_count ) {
 				printf(
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'seq-pac-theme' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf(
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $spt_theme_comment_count, 'comments title', 'seq-pac-theme' ) ),
-					number_format_i18n( $spt_theme_comment_count ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $spr_theme_comment_count, 'comments title', 'seq-pac-theme' ) ),
+					number_format_i18n( $spr_theme_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}

@@ -15,6 +15,8 @@ if ( is_home() && ! is_front_page() ) {
     $canonical = get_permalink();
 }
 
+$hero = 'http://localhost/realty/wp-content/themes/seq-pac-theme/assets/images/kaweah-country-banner.jpg';
+
 ?>
 <!doctype html>
 <?php do_action( 'before_html' ); ?>
@@ -49,10 +51,11 @@ if ( is_home() && ! is_front_page() ) {
 				<?php the_custom_logo(); ?>
 			</div>
 			<div class="site-title-description">
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php $spr_theme_description = get_bloginfo( 'description', 'display' );
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php  $spr_theme_description = get_bloginfo( 'description', 'display' );
 				if ( $spr_theme_description || is_customize_preview() ) : ?>
-				<p class="site-description"><span class="screen-reader-text"><?php echo $spr_theme_description; ?></span></p><?php endif; ?>
+				<p class="site-description"><span class="screen-reader-text"><?php echo $spr_theme_description; ?></span></p>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="site-header-contact">
@@ -69,4 +72,16 @@ if ( is_home() && ! is_front_page() ) {
 			'container_class' => 'global-wrapper'
 		] ); ?>
 	</nav>
+	<div class="front-page-hero">
+		<div class="custom-header-media">
+			<?php the_custom_header_markup(); ?>
+		</div>
+		<div class="global-wrapper">
+			<?php $spr_theme_description = get_bloginfo( 'description', 'display' );
+			if ( $spr_theme_description || is_customize_preview() ) : ?>
+			<h3 class="site-description"><?php echo $spr_theme_description; ?></h3>
+			<p>Three Rivers, Exeter, Porterville, Visalia, and Tulare County, California</p>
+			<?php endif; ?>
+		</div>
+	</div>
 	<div id="content" class="site-content global-wrapper">

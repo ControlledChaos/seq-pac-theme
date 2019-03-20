@@ -2,16 +2,14 @@
 /**
  * Template part for displaying a message that posts cannot be found
  *
- * @package spt_Theme
+ * @package SPR_Theme
  */
 
 ?>
-
 <section class="no-results not-found">
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'seq-pac-theme' ); ?></h1>
 	</header>
-
 	<div class="page-content" itemprop="articleBody">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) :
 

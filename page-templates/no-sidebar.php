@@ -1,6 +1,10 @@
 <?php
 /**
- * The template for displaying all pages
+ * The template for displaying No Sidebar pages
+ *
+ * Template Name: No Sidebar
+ * Template Post Type: page
+ * Description: Does not load sidebar widgets.
  *
  * @package SPR_Theme
  */
@@ -13,7 +17,7 @@ get_header(); ?>
 		<?php while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+			get_template_part( 'template-parts/content', 'page-no-sidebar' );
 
 		endwhile; // End of the loop.
 		?>
@@ -22,5 +26,4 @@ get_header(); ?>
 	</div>
 
 <?php
-get_sidebar();
 get_footer();

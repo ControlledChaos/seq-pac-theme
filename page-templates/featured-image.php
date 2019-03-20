@@ -1,6 +1,10 @@
 <?php
 /**
- * The template for displaying all pages
+ * The template for displaying Featured Image pages
+ *
+ * Template Name: Featured Image
+ * Template Post Type: page
+ * Description: Adds the featured image to the top of the page.
  *
  * @package SPR_Theme
  */
@@ -13,7 +17,7 @@ get_header(); ?>
 		<?php while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+			get_template_part( 'template-parts/content', 'page-featured-image' );
 
 		endwhile; // End of the loop.
 		?>

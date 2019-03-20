@@ -2,12 +2,12 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @package spt_Theme
+ * @package SPR_Theme
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="entry-content">
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
 
 			<section class="error-404 not-found">
@@ -41,8 +41,8 @@ get_header(); ?>
 
 					<?php
 					/* translators: %1$s: smiley */
-					$spt_theme_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'seq-pac-theme' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$spt_theme_archive_content" );
+					$spr_theme_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'seq-pac-theme' ), convert_smilies( ':)' ) ) . '</p>';
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$spr_theme_archive_content" );
 
 					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>

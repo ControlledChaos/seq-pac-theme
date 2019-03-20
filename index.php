@@ -2,12 +2,12 @@
 /**
  * The main template file
  *
- * @package spt_Theme
+ * @package SPR_Theme
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="entry-content">
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
 
 		<?php if ( have_posts() ) :

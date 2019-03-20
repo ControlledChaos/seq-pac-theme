@@ -10,6 +10,7 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header>
+	<?php spr_theme_post_thumbnail(); ?>
 	<div class="entry-content" itemprop="articleBody">
 		<?php the_content();
 		wp_link_pages( [

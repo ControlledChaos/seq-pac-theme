@@ -2,16 +2,16 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package spt_Theme
+ * @package SPR_Theme
  */
 
 ?>
 
-<aside id="secondary" class="widget-area">
+<aside id="secondary" class="sidebar">
 	<?php
-		if ( is_active_sidebar( 'sidebar-1' ) ) :
+		if ( is_active_sidebar( 'sidebar' ) ) :
 
-		dynamic_sidebar( 'sidebar-1' );
+		dynamic_sidebar( 'sidebar' );
 
 		else : ?>
 

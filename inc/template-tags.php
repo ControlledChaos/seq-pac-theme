@@ -4,15 +4,15 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package spt_Theme
+ * @package SPR_Theme
  */
 
 /**
  * Conditional Schema attributes for `<div id="page"`.
  */
-if ( ! function_exists( 'spt_site_schema' ) ) :
+if ( ! function_exists( 'spr_site_schema' ) ) :
 
-	function spt_site_schema() {
+	function spr_site_schema() {
 
 		// Change page slugs and template names as needed.
 		if ( is_page( 'about' ) || is_page( 'about-us' ) || is_page_template( 'page-about.php' ) || is_page_template( 'about.php' ) ) {
@@ -42,9 +42,9 @@ endif;
 /**
  * Prints HTML with meta information for the current post-date/time.
  */
-if ( ! function_exists( 'spt_theme_posted_on' ) ) :
+if ( ! function_exists( 'spr_theme_posted_on' ) ) :
 
-	function spt_theme_posted_on() {
+	function spr_theme_posted_on() {
 
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -73,9 +73,9 @@ endif;
 /**
  * Prints HTML with meta information for the current author.
  */
-if ( ! function_exists( 'spt_theme_posted_by' ) ) :
+if ( ! function_exists( 'spr_theme_posted_by' ) ) :
 
-	function spt_theme_posted_by() {
+	function spr_theme_posted_by() {
 
 		$byline = sprintf(
 			esc_html_x( 'by %s', 'post author', 'seq-pac-theme' ),
@@ -91,9 +91,9 @@ endif;
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-if ( ! function_exists( 'spt_theme_entry_footer' ) ) :
+if ( ! function_exists( 'spr_theme_entry_footer' ) ) :
 
-	function spt_theme_entry_footer() {
+	function spr_theme_entry_footer() {
 
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
@@ -156,9 +156,9 @@ endif;
  * Wraps the post thumbnail in an anchor element on index views, or a div
  * element when on single views.
  */
-if ( ! function_exists( 'spt_theme_post_thumbnail' ) ) :
+if ( ! function_exists( 'spr_theme_post_thumbnail' ) ) :
 
-	function spt_theme_post_thumbnail() {
+	function spr_theme_post_thumbnail() {
 
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;

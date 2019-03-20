@@ -2,12 +2,12 @@
 /**
  * The template for displaying search results pages
  *
- * @package spt_Theme
+ * @package SPR_Theme
  */
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="entry-content">
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
 
 		<?php if ( have_posts() ) : ?>

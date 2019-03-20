@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * @package spt_Theme
+ * @package SPR_Theme
  */
 
 // Get the site name.
@@ -21,12 +21,21 @@ $copyright = sprintf(
 
 	<footer id="colophon" class="site-footer">
 		<div class="footer-content global-wrapper footer-wrapper">
-				<?php echo $copyright; ?>
+			<div class="footer-widgets">
+				<?php if ( is_active_sidebar( 'footer-one' ) ) { dynamic_sidebar( 'footer-one' ); } ?>
+				<?php if ( is_active_sidebar( 'footer-two' ) ) { dynamic_sidebar( 'footer-two' ); } ?>
+			</div>
+			<?php echo $copyright; ?>
 		</div>
 	</footer>
 </div>
 
 <?php wp_footer(); ?>
-
+<?php
+// Add the sticky menu script.
+echo sprintf(
+	'<script>%1s</script>',
+	'jQuery(document).ready(function($){$(".main-navigation").stick_in_parent({parent:".site",sticky_class:"navigation-stuck",offset_top:0});});'
+); ?>
 </body>
 </html>
