@@ -28,7 +28,9 @@ if ( $links_heading ) {
 		// Featured listings loop.
 		$args = [
 			'post_type'     => [ 'listing' ],
-			'tag_slug__and' => [ 'featured' ]
+			'tag_slug__and' => [ 'featured' ],
+			'order'         => 'ASC',
+			'orderby'       => 'menu_order'
 		];
 		$query = new WP_Query( $args );
 
