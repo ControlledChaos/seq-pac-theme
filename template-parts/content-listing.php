@@ -236,10 +236,10 @@ $(document).ready(function(){
 			<?php the_field( 'spl_zip_code' ); ?>
 		</h3>
 		<p class="listing-type"><?php
-		// Get the location(s).
-		$locations = get_field( 'spl_listing_type' );
-		if ( $locations ) {
-			foreach ( $locations as $location ) { echo sprintf( '<span class="location">%1s</span>', $location->name ); };
+		// Get the type(s).
+		$types = get_field( 'spl_listing_type' );
+		if ( $types ) {
+			foreach ( $types as $type ) { echo sprintf( '<span class="type">%1s</span>', $type->name ); };
 		} else {
 			echo '';
 		} ?></p>

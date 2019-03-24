@@ -14,7 +14,11 @@ get_header(); ?>
 			</header>
 			<?php while ( have_posts() ) :
 				the_post();
-				get_template_part( 'template-parts/content', get_post_type() );
+				if ( is_post_type_archive( [ 'listing', 'rental' ] ) || is_tax( [ 'location', 'type' ] ) ) {
+					get_template_part( 'template-parts/content', 'listing-archive' );
+				} else {
+					get_template_part( 'template-parts/content', get_post_type() );
+				}
 			endwhile;
 			the_posts_navigation();
 		else :

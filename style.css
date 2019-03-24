@@ -851,9 +851,26 @@ a {
 	margin: 0.5em 0;
 }
 
- /**
-  * Sidebar
-  */
+/**
+* Archives
+*/
+.site-main .listing-archives-content:not(:first-of-type) {
+	margin-top: 3em;
+	padding-top: 1em;
+	border-top: solid 1px #ccc;
+}
+
+.listing-archives-content .location:not(:last-of-type)::after {
+    content: '|';
+    margin: 0 0.3em;
+    color: #ccc;
+}
+
+
+
+/**
+* Sidebar
+*/
 .sidebar {
 	width: 22%;
 	padding: 2rem 2rem 2rem 0;
