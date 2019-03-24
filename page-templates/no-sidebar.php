@@ -3,7 +3,7 @@
  * The template for displaying No Sidebar pages
  *
  * Template Name: No Sidebar
- * Template Post Type: page
+ * Template Post Type: post, page
  * Description: Does not load sidebar widgets.
  *
  * @package SPR_Theme
@@ -26,4 +26,5 @@ get_header(); ?>
 	</div>
 
 <?php
+get_sidebar();
 get_footer();

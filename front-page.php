@@ -10,7 +10,11 @@ get_header( 'front' ); ?>
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
 		<?php while ( have_posts() ) :
 			the_post();
-			get_template_part( 'template-parts/content', 'page-front' );
+			if ( class_exists( 'acf' ) ) {
+				get_template_part( 'template-parts/content', 'page-front' );
+			} else {
+				get_template_part( 'template-parts/content', 'no-acf' );
+			}
 		endwhile; ?>
 		</main>
 	</div>

@@ -3,7 +3,7 @@
  * The template for displaying Featured Image, No Sidebar pages
  *
  * Template Name: Featured Image, No Sidebar
- * Template Post Type: page
+ * Template Post Type: post, page
  * Description: Adds the featured image to the top of the page and does not load sidebar widgets.
  *
  * @package SPR_Theme
@@ -24,4 +24,5 @@ get_header(); ?>
 		</main>
 	</div>
 
-<?php get_footer();
+<?php
+get_footer();

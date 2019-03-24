@@ -56,7 +56,7 @@ if ( is_home() && ! is_front_page() ) {
 			</div>
 		</div>
 		<div class="site-header-contact">
-			<?php echo sprintf( '<p>%1s <a href="tel:%2s">%3s</a></p>', esc_html__( 'Phone:', 'seq-pac-theme' ), '15595612200', '559.561.2200' ); ?>
+			<?php echo sprintf( '<p><a href="tel:%1s">%2s %3s</a></p>', '15595612200', esc_html__( 'Phone:', 'seq-pac-theme' ), '559.561.2200' ); ?>
 			<?php echo sprintf( '<p><a href="mailto:%1s">%2s</a></p>', esc_attr( 'info@sequoiapacificrealty.com' ), 'info@sequoiapacificrealty.com' ); ?>
 		</div>
 	</header>

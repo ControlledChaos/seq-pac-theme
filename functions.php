@@ -5,6 +5,14 @@
  * @package SPR_Theme
  */
 
+// Restrict direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Theme setup
+ */
 if ( ! function_exists( 'spr_theme_setup' ) ) :
 
 	function spr_theme_setup() {
@@ -59,6 +67,26 @@ if ( ! function_exists( 'spr_theme_setup' ) ) :
 			'flex-height' => false,
 		] );
 
+		/**
+		 * Custom header for the front page.
+		 */
+		add_theme_support( 'custom-header', apply_filters( 'spr_custom_header_args', [
+			'default-image'      => get_parent_theme_file_uri( '/assets/images/header.jpg' ),
+			'width'              => 2048,
+			'height'             => 878,
+			'flex-height'        => true,
+			'video'              => false,
+			'wp-head-callback'   => null
+		] ) );
+
+		register_default_headers( [
+			'default-image' => [
+				'url'           => '%s/assets/images/header.jpg',
+				'thumbnail_url' => '%s/assets/images/header.jpg',
+				'description'   => __( 'Default Header Image', 'seq-pac-theme' ),
+			],
+		] );
+
 		// Add stylesheet for the content editor.
 		add_editor_style( '/assets/css/editor-style.css', [], '', 'screen' );
 
@@ -67,8 +95,9 @@ endif;
 add_action( 'after_setup_theme', 'spr_theme_setup' );
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
+ * Content width
  *
+ * Set the content width in pixels, based on the theme's design and stylesheet.
  * Priority 0 to make it available to lower priority callbacks.
  *
  * @global int $content_width
@@ -79,7 +108,7 @@ function spr_theme_content_width() {
 add_action( 'after_setup_theme', 'spr_theme_content_width', 0 );
 
 /**
- * Filter the `sizes` value in the header image markup.
+ * Filter the `sizes` value in the header image markup
  *
  * @since Twenty Seventeen 1.0
  *
@@ -97,14 +126,14 @@ function spr_header_image_tag( $html, $header, $attr ) {
 add_filter( 'get_header_image_tag', 'spr_header_image_tag', 10, 3 );
 
 /**
- * Register widget area.
+ * Register widget areas
  *
  */
 function spr_theme_widgets_init() {
 
 	register_sidebar( [
 		'name'          => esc_html__( 'Sidebar', 'seq-pac-theme' ),
-		'id'            => 'sidebar',
+		'id'            => 'right-sidebar',
 		'description'   => esc_html__( 'Right hand sidebar on templates that support it.', 'seq-pac-theme' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -136,7 +165,7 @@ function spr_theme_widgets_init() {
 add_action( 'widgets_init', 'spr_theme_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue scripts and styles
  */
 function spr_theme_scripts() {
 
@@ -147,7 +176,7 @@ function spr_theme_scripts() {
 	wp_enqueue_script( 'jquery' );
 
 	// Google fonts.
-	wp_enqueue_style( 'seq-pac-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i', [], '', 'screen' );
+	// wp_enqueue_style( 'seq-pac-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i', [], '', 'screen' );
 
 	// Theme sylesheet.
 	wp_enqueue_style( 'seq-pac-theme-style', get_theme_file_uri( 'style.css' ), [], '', 'screen' );
@@ -165,10 +194,11 @@ function spr_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'spr_theme_scripts' );
 
+/**
+ * Remove sections and controls from the Customizer
+ */
 function spr_customizer_remove( $wp_customize ) {
 
-	// $wp_customize->remove_control( 'header_image' );
-	// $wp_customize->remove_panel( 'widgets' );
 	$wp_customize->remove_section( 'colors' );
 	$wp_customize->remove_section( 'background_image' );
 	$wp_customize->remove_section( 'static_front_page' );
@@ -176,9 +206,9 @@ function spr_customizer_remove( $wp_customize ) {
 add_action( 'customize_register', 'spr_customizer_remove' );
 
 /**
- * Theme dependencies.
+ * Theme dependencies
  */
-require get_theme_file_path( '/inc/custom-header.php' );
+// require get_theme_file_path( '/inc/custom-header.php' );
 require get_theme_file_path( '/inc/template-tags.php' );
 require get_theme_file_path( '/inc/template-functions.php' );
 require get_theme_file_path( '/inc/customizer.php' );

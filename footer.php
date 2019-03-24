@@ -35,7 +35,9 @@ $copyright = sprintf(
 // Add the sticky menu script.
 echo sprintf(
 	'<script>%1s</script>',
-	'jQuery(document).ready(function($){$(".main-navigation").stick_in_parent({parent:".site",sticky_class:"navigation-stuck",offset_top:0});});'
+	'jQuery(document).ready(function(){
+		jQuery(".front-featured-properties ul").slick();
+	  });'
 ); ?>
 </body>
 </html>

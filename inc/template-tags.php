@@ -7,6 +7,11 @@
  * @package SPR_Theme
  */
 
+// Restrict direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Conditional Schema attributes for `<div id="page"`.
  */
@@ -129,22 +134,6 @@ if ( ! function_exists( 'spr_theme_entry_footer' ) ) :
 			);
 			echo '</span>';
 		}
-
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'seq-pac-theme' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
 
 	}
 
