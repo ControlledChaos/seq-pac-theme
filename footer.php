@@ -33,11 +33,15 @@ $copyright = sprintf(
 <?php wp_footer(); ?>
 <?php
 // Add the sticky menu script.
+if ( is_front_page() ) :
 echo sprintf(
 	'<script>%1s</script>',
 	'jQuery(document).ready(function(){
-		jQuery(".front-featured-properties ul").slick();
+		jQuery(".front-featured-properties ul").slick({
+			autoplay : true,
+			autoplaySpeed : 7500
+		});
 	  });'
-); ?>
+); endif; ?>
 </body>
 </html>
