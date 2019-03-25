@@ -897,7 +897,8 @@ a {
 }
 
 .sidebar li {
-	margin-top: 0.25em;
+	margin-top: .625em;
+	line-height: 1.3;
 }
 
 .sidebar a,
