@@ -48,6 +48,9 @@ if ( ! function_exists( 'spr_theme_setup' ) ) :
 		// Customizer widget refresh support.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
+		// Set featured image size.
+		set_post_thumbnail_size( 1280, 720, true );
+
 		// Default sizes and crop options.
 		update_option( 'thumbnail_size_w', 160 );
 		update_option( 'thumbnail_size_h', 160 );
@@ -89,6 +92,9 @@ if ( ! function_exists( 'spr_theme_setup' ) ) :
 
 		// Add stylesheet for the content editor.
 		add_editor_style( '/assets/css/editor-style.css', [], '', 'screen' );
+
+		// jQuery UI fallback for HTML5 Contact Form 7 form fields.
+		add_filter( 'wpcf7_support_html5_fallback', '__return_true' );
 
 	}
 endif;
@@ -172,14 +178,17 @@ function spr_theme_scripts() {
 	// Disable blocks stylesheet.
 	wp_dequeue_style( 'wp-block-library' );
 
+	// Disable Contact Form 7 stylesheet.
+	// wp_dequeue_style( 'contact-form-7' );
+
 	// Enable jQuery.
 	wp_enqueue_script( 'jquery' );
 
-	// Google fonts.
-	// wp_enqueue_style( 'seq-pac-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i', [], '', 'screen' );
+	// Adobe fonts.
+	wp_enqueue_style( 'seq-pac-adobe-fonts', 'https://use.typekit.net/vaq7zjv.css', [], '', 'screen' );
 
 	// Theme sylesheet.
-	wp_enqueue_style( 'seq-pac-theme-style', get_theme_file_uri( 'style.css' ), [], '', 'screen' );
+	wp_enqueue_style( 'seq-pac-theme-style', get_theme_file_uri( 'style.min.css' ), [], '', 'screen' );
 
 	// Navigation toggle.
 	wp_enqueue_script( 'seq-pac-theme-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), [], '', true );
