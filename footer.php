@@ -39,7 +39,10 @@ echo sprintf(
 	'jQuery(document).ready(function(){
 		jQuery( ".front-featured-properties ul" ).slick({
 			autoplay : true,
-			autoplaySpeed : 7500
+			autoplaySpeed : 7500,
+			speed : 750,
+			fade : true,
+			easing : "easeInOut"
 		});
 	  });'
 ); endif; ?>
