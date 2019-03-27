@@ -852,8 +852,14 @@ a {
 }
 
 /**
-* Archives
-*/
+ * Archives
+ */
+.page-title {
+	font-variant: none;
+	font-size: 1.725em;
+	font-weight: 500;
+}
+
 .site-main .listing-archives-content {
 	margin-top: 3em;
 	padding-top: 1em;
