@@ -17,6 +17,9 @@ if ( ! class_exists( 'acf_pro' ) ) {
 get_header(); ?>
 	<div id="primary" class="entry-content">
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
+			<header class="entry-header">
+				<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+			</header>
 		<?php
 		// Set this page in pagination as 1 rather than 0.
 		if ( get_query_var( 'paged' ) ) {
