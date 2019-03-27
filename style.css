@@ -230,9 +230,6 @@ a {
 	background: #fff;
 	width: 100%;
 	font-family: eb-garamond, Garamond, 'NonBreakingSpaceOverride', 'Hoefler Text', 'Baskerville Old Face', 'Times New Roman', serif;
-	font-weight: normal;
-	font-weight: 500;
-	font-style: normal;
 	font-variant: small-caps;
 	font-variant-caps: small-caps;
 }
@@ -1516,6 +1513,10 @@ label ~ input:not([type="checkbox"]):not([type="radio"]).search-submit {
 		padding: 0;
 	}
 
+	.front-page-hero {
+		background: #fff;
+	}
+
 	.custom-header-media:before {
 		display: none;
 	}
@@ -1529,6 +1530,14 @@ label ~ input:not([type="checkbox"]):not([type="radio"]).search-submit {
 	.front-page-hero-content p {
 		color: #555;
 		text-shadow: none;
+	}
+
+	.front-page-hero-content h3 {
+		font-size: 1.5em;
+	}
+
+	.front-page-hero-content p {
+		line-height: 1.2;
 	}
 
 	.home .entry-content {
