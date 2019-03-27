@@ -9,11 +9,6 @@
  * @package SPR_Theme
  */
 
-// Redirect to home if ACF is not active.
-if ( ! class_exists( 'acf_pro' ) ) {
-	wp_redirect( home_url(), 302 );
-}
-
 get_header(); ?>
 	<div id="primary" class="entry-content">
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
