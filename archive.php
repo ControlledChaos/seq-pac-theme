@@ -14,8 +14,11 @@ get_header(); ?>
 			</header>
 			<?php while ( have_posts() ) :
 				the_post();
-				if ( is_post_type_archive( [ 'listing', 'rental' ] ) || is_tax( [ 'location', 'type' ] ) ) {
-					get_template_part( 'template-parts/content', 'listing-archive' );
+				if ( class_exists( 'acf_pro' ) && ( is_post_type_archive( [ 'listing', 'rental' ] ) || is_tax( [ 'location', 'type' ] ) ) ) {
+					$status = get_field( 'spl_listing_status' );
+					if ( 'active' == $status ) {
+						get_template_part( 'template-parts/content', 'listing-archive' );
+					}
 				} else {
 					get_template_part( 'template-parts/content', get_post_type() );
 				}
