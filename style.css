@@ -315,9 +315,9 @@ a {
 	}
 }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
@@ -872,7 +872,31 @@ a {
     color: #ccc;
 }
 
+.posts-pagination {
+	margin-top: 3em;
+	padding-top: 1em;
+	border-top: solid 1px #ccc;
+}
 
+.entry-content .posts-pagination ul {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 0;
+}
+
+.posts-pagination li {
+	width: 50%;
+	font-family: eb-garamond, Garamond, 'NonBreakingSpaceOverride', 'Hoefler Text', 'Baskerville Old Face', 'Times New Roman', serif;
+	font-size: 1.35em;
+	font-weight: normal;
+	font-weight: 500;
+	font-style: italic;
+}
+
+.next-posts {
+	text-align: right;
+}
 
 /**
 * Sidebar
