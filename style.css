@@ -854,7 +854,7 @@ a {
 /**
 * Archives
 */
-.site-main .listing-archives-content:not(:first-of-type) {
+.site-main .listing-archives-content {
 	margin-top: 3em;
 	padding-top: 1em;
 	border-top: solid 1px #ccc;
