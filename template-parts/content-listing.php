@@ -247,11 +247,11 @@ $(document).ready(function(){
 		<img class="listing-featured-image" src="<?php echo $thumb; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" alt="<?php echo $alt; ?>" />
 	</header>
 	<div itemprop="articleBody">
-		<div class="listing-description">
+		<div id="listing-description" class="listing-description">
 			<h2><?php _e( 'Listing Description', 'seq-pac-theme' ); ?></h2>
 			<?php the_field( 'spl_description' ); ?>
 		</div>
-		<div class="listing-details">
+		<div id="listing-details" class="listing-details">
 			<h2><?php _e( 'Listing Details', 'seq-pac-theme' ); ?></h2>
 			<div class="listing-details-list four-wide top">
 				<span><strong><?php _e( 'Square Footage:', 'seq-pac-theme' ); ?></strong> <?php the_field( 'spl_square_footage' ); ?></span>
@@ -277,7 +277,7 @@ $(document).ready(function(){
 		$images = get_field( 'spl_image_gallery' );
 
 		if ( $images ) : ?>
-		<div class="listing-gallery">
+		<div id="listing-gallery" class="listing-gallery">
 			<h2><?php _e( 'Listing Gallery', 'seq-pac-theme' ); ?></h2>
 			<ul class="image-gallery">
 				<?php foreach( $images as $image ): ?>
@@ -291,7 +291,7 @@ $(document).ready(function(){
 		</div>
 		<?php endif; ?>
 		<?php if ( have_rows( 'spl_videos' ) ) : ?>
-		<div class="listing-video">
+		<div id="listing-video" class="listing-video">
 			<h2><?php _e( 'Listing Video', 'seq-pac-theme' ); ?></h2>
 			<?php while ( have_rows( 'spl_videos' ) ) : the_row();
 			$embed = get_sub_field( 'spl_video_embed' ) ?>
@@ -301,7 +301,7 @@ $(document).ready(function(){
 		</div>
 		<?php endif; ?>
 		<?php if ( ! empty( $map ) ) : ?>
-		<div class="listing-map">
+		<div id="listing-map" class="listing-map">
 			<div class="marker" data-lat="<?php echo $map['lat']; ?>" data-lng="<?php echo $map['lng']; ?>"></div>
 		</div>
 		<?php endif; ?>

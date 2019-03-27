@@ -74,7 +74,14 @@ if ( $links_heading ) {
 					// Image variables.
 					$url     = $image['url'];
 					$title   = $image['title'];
-					$alt     = $image['alt'];
+					$alt     = sprintf(
+						'%1s | %2s - %3s | %4s%5s',
+						esc_html( get_the_title() ),
+						'$' . esc_html( get_field( 'spl_sale_price' ) ),
+						esc_html( get_field( 'spl_summary' ) ),
+						get_field( 'spl_post_office' ),
+						__( ', California', 'seq-pac-plugin' )
+					);
 
 					// Check for our custom image size in the companion plugin.
 					if ( has_image_size( 'wide-large' ) ) {
@@ -91,7 +98,7 @@ if ( $links_heading ) {
 					$height = $image['sizes'][$size . '-height'];
 					$srcset = wp_get_attachment_image_srcset( $image['ID'], $size );
 					?>
-					<a href="<?php the_permalink(); ?>"><img src="<?php echo $thumb; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" alt="<?php echo $alt; ?>" /></a>
+					<a href="<?php the_permalink(); ?>"><img src="<?php echo $thumb; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" alt="<?php echo $alt; ?>" longdesc="<?php echo esc_url( get_permalink() . '#listing-description' ); ?>" /></a>
 				</li>
 			<?php endwhile; ?>
 			</ul>
