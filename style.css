@@ -877,8 +877,14 @@ a {
 
 .entry-content .posts-pagination ul {
 	width: 100%;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	   -moz-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	padding: 0;
 }
 
@@ -1155,6 +1161,7 @@ form * + * {
 
 .required-field {
 	display: inline-block;
+	margin-right: 0.25em;
 	color: #d00;
 }
 
@@ -1189,7 +1196,10 @@ legend {
 	padding: 0 0.5em;
 }
 
-label {}
+label {
+	display: inline-block;
+	line-height: 1.2;
+}
 
 input,
 textarea,
